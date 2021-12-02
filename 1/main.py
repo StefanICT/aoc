@@ -1,4 +1,4 @@
-with open("1/measurements1.1") as fp:
+with open("1/measurements") as fp:
     measurements = map(int, fp.read().splitlines())
 
     increased = 0
@@ -11,7 +11,7 @@ with open("1/measurements1.1") as fp:
 
     print(f"Day 1.1: {increased}")
 
-with open("1/measurements1.2") as fp:
+with open("1/measurements") as fp:
     measurements = list(map(int, fp.read().splitlines()))
 
     increased = 0

@@ -1,4 +1,4 @@
-with open("2/commands1.1") as fp:
+with open("2/commands") as fp:
     horizontal = 0
     depth = 0
 
@@ -14,7 +14,7 @@ with open("2/commands1.1") as fp:
 
     print(f"Day 2.1: {horizontal * depth}")
 
-with open("2/commands1.2") as fp:
+with open("2/commands") as fp:
     horizontal = 0
     depth = 0
     aim = 0
