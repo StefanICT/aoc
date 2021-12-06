@@ -12,7 +12,7 @@ func main() {
 }
 
 func part1() {
-	file, _ := os.Open("1/input")
+	file, _ := os.Open("2015/1/input")
 	defer file.Close()
 
 	floor := 0
@@ -31,11 +31,11 @@ func part1() {
 }
 
 func part2() {
-	file, _ := os.Open("1/input")
+	file, _ := os.Open("2015/1/input")
 	defer file.Close()
 
 	floor := 0
-    ch := 1
+	ch := 1
 	scanner := bufio.NewScanner(file)
 	scanner.Split(bufio.ScanRunes)
 	for scanner.Scan() {
@@ -46,10 +46,10 @@ func part2() {
 			floor--
 		}
 
-        if floor < 0 {
-            break
-        }
-        ch++
+		if floor < 0 {
+			break
+		}
+		ch++
 	}
 
 	fmt.Printf("Day 1.2: %d\n", ch)

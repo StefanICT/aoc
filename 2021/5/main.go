@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "aoc/utils"
+	. "aoc/util"
 	"bufio"
 	"fmt"
 	"os"
@@ -54,7 +54,7 @@ func part2() {
 }
 
 func makeLines() []Line {
-	file, _ := os.Open("5/input")
+	file, _ := os.Open("2021/5/input")
 	defer file.Close()
 
 	re := regexp.MustCompile(`(\d+),(\d+)\s+->\s+(\d+),(\d+)`)
@@ -109,10 +109,10 @@ func max(lines []Line) Point {
 
 func plot(line Line, grid [][]int) {
 	// Use Bresenham's line algorithm
-    // https://medium.com/geekculture/bresenhams-line-drawing-algorithm-2e0e953901b3
+	// https://medium.com/geekculture/bresenhams-line-drawing-algorithm-2e0e953901b3
 
-    dx := Abs(line.end.x - line.start.x)
-    dy := Abs(line.end.y - line.start.y)
+	dx := Abs(line.end.x - line.start.x)
+	dy := Abs(line.end.y - line.start.y)
 
 	var sx int
 	if line.start.x < line.end.x {
@@ -128,7 +128,7 @@ func plot(line Line, grid [][]int) {
 		sy = -1
 	}
 
-    d := dx - dy
+	d := dx - dy
 
 	for {
 		grid[line.start.y][line.start.x] += 1
@@ -136,7 +136,7 @@ func plot(line Line, grid [][]int) {
 			return
 		}
 
-        d2 := 2 * d
+		d2 := 2 * d
 		if d2 > (0 - dy) {
 			d -= dy
 			line.start.x += sx

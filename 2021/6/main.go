@@ -1,7 +1,7 @@
 package main
 
 import (
-	. "aoc/utils"
+	. "aoc/util"
 	"bufio"
 	"fmt"
 	"os"
@@ -21,7 +21,7 @@ func part2() {
 }
 
 func read() []int {
-	file, _ := os.Open("6/input")
+	file, _ := os.Open("2021/6/input")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)

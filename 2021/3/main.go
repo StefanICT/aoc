@@ -14,7 +14,7 @@ func main() {
 }
 
 func part1() {
-	file, _ := os.Open("3/report")
+	file, _ := os.Open("2021/3/report")
 	defer file.Close()
 
 	slice := make([]uint64, 12)
@@ -47,7 +47,7 @@ func part1() {
 }
 
 func part2() {
-	file, _ := os.Open("3/report")
+	file, _ := os.Open("2021/3/report")
 	defer file.Close()
 
 	length := 12

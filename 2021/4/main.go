@@ -16,7 +16,7 @@ func main() {
 }
 
 func part1() {
-	file, _ := os.Open("4/bingo")
+	file, _ := os.Open("2021/4/bingo")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
@@ -51,7 +51,7 @@ draw:
 }
 
 func part2() {
-	file, _ := os.Open("4/bingo")
+	file, _ := os.Open("2021/4/bingo")
 	defer file.Close()
 
 	scanner := bufio.NewScanner(file)
