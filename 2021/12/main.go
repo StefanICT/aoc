@@ -6,11 +6,6 @@ import (
 	"strings"
 )
 
-func main() {
-	part1()
-	part2()
-}
-
 type Route struct {
 	From string
 	To   string
@@ -22,8 +17,9 @@ type Node struct {
 	Parent *Node
 }
 
-func part1() {
-	routes := []Route{}
+var routes = []Route{}
+
+func main() {
 	for _, line := range ReadLines("2021/12/input") {
 		routes = append(routes, Route{
 			From: strings.Split(line, "-")[0],
@@ -31,6 +27,11 @@ func part1() {
 		})
 	}
 
+	part1()
+	part2()
+}
+
+func part1() {
 	start := Node{
 		Cave:   "start",
 		Nodes:  []*Node{},
@@ -42,14 +43,6 @@ func part1() {
 }
 
 func part2() {
-	routes := []Route{}
-	for _, line := range ReadLines("2021/12/input") {
-		routes = append(routes, Route{
-			From: strings.Split(line, "-")[0],
-			To:   strings.Split(line, "-")[1],
-		})
-	}
-
 	start := Node{
 		Cave:   "start",
 		Nodes:  []*Node{},
