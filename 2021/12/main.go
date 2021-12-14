@@ -21,7 +21,7 @@ var routes = []Route{}
 
 func main() {
 	for _, line := range ReadLines("2021/12/input") {
-        components := strings.Split(line, "-")
+		components := strings.Split(line, "-")
 		routes = append(routes, Route{
 			From: components[0],
 			To:   components[1],
