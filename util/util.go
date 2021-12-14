@@ -2,10 +2,14 @@ package util
 
 import (
 	"bufio"
+	"math"
 	"os"
 	"strconv"
 	"strings"
 )
+
+var MaxInt = math.MaxInt
+var MinInt = math.MinInt
 
 func ReadLines(path string) []string {
 	file, _ := os.Open(path)
