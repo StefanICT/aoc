@@ -112,23 +112,23 @@ func grow(grid [][]int, iter int) [][]int {
 	grown := make([][]int, len(grid))
 	copy(grown, grid)
 
-    for i := 0; i < len(grid); i++ {
-        ptr := &grid[i]
+	for i := 0; i < len(grid); i++ {
+		ptr := &grid[i]
 
-        for j := 0; j < iter - 1; j++ {
-            row := increase(*ptr)
-            grown[i] = append(grown[i], row...)
-            ptr = &row
-        }
-    }
+		for j := 0; j < iter-1; j++ {
+			row := increase(*ptr)
+			grown[i] = append(grown[i], row...)
+			ptr = &row
+		}
+	}
 
-    for j := 0; j < iter - 1; j++ {
-        for i := 0; i <len(grid); i++ {
-            grown = append(grown, increase(grown[len(grid) * j + i]))
-        }
-    }
+	for j := 0; j < iter-1; j++ {
+		for i := 0; i < len(grid); i++ {
+			grown = append(grown, increase(grown[len(grid)*j+i]))
+		}
+	}
 
-    return grown
+	return grown
 }
 
 func increase(list []int) []int {
