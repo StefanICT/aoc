@@ -170,7 +170,7 @@ func (operator Operator) Evaluate() int {
 	switch operator.Id {
 	case sum:
 		fn = Sum
-    case product:
+	case product:
 		fn = Product
 	case minimum:
 		fn = Minimum
