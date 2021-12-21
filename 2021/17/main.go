@@ -1,7 +1,7 @@
 package main
 
 import (
-    . "aoc/util"
+	. "aoc/util"
 	"fmt"
 )
 
@@ -16,49 +16,49 @@ func main() {
 	y1 := -96
 	y2 := -50
 
-    fmt.Println(part1(x1, x2, y1, y2))
-    fmt.Println(part2(x1, x2, y1, y2))
+	fmt.Println(part1(x1, x2, y1, y2))
+	fmt.Println(part2(x1, x2, y1, y2))
 }
 
 func part1(x1 int, x2 int, y1 int, y2 int) int {
-    highestY := 0
-    for x := 0; x <= x2; x++ {
-        for y := y1; Abs(y) <= Abs(y1); y++ {
-            initialVelocity := Point{x,y}
-            if points, hit := Trajection(initialVelocity, x1, x2, y1, y2); hit {
-                highestY = Max(HighestY(points), highestY)
-            }
-        }
-    }
-    return highestY
+	highestY := 0
+	for x := 0; x <= x2; x++ {
+		for y := y1; Abs(y) <= Abs(y1); y++ {
+			initialVelocity := Point{x, y}
+			if points, hit := Trajection(initialVelocity, x1, x2, y1, y2); hit {
+				highestY = Max(HighestY(points), highestY)
+			}
+		}
+	}
+	return highestY
 }
 
 func HighestY(points []Point) int {
-    highestY := 0
-    for _, point := range points {
-        highestY = Max(highestY, point.Y)
-    }
+	highestY := 0
+	for _, point := range points {
+		highestY = Max(highestY, point.Y)
+	}
 
-    return highestY
+	return highestY
 }
 
 func part2(x1 int, x2 int, y1 int, y2 int) int {
-    count := 0
+	count := 0
 
-    for x := 0; x <= Abs(x2); x++ {
-        for y := y1; Abs(y) <= Abs(y1); y++ {
-            initialVelocity := Point{x,y}
-            if _, hit := Trajection(initialVelocity, x1, x2, y1, y2); hit {
-                count++
-            }
-        }
-    }
+	for x := 0; x <= Abs(x2); x++ {
+		for y := y1; Abs(y) <= Abs(y1); y++ {
+			initialVelocity := Point{x, y}
+			if _, hit := Trajection(initialVelocity, x1, x2, y1, y2); hit {
+				count++
+			}
+		}
+	}
 
-    return count
+	return count
 }
 
 func Trajection(initialVelocity Point, x1 int, x2 int, y1 int, y2 int) ([]Point, bool) {
-    points := []Point{}
+	points := []Point{}
 
 	probe := Point{
 		X: 0,
@@ -66,13 +66,13 @@ func Trajection(initialVelocity Point, x1 int, x2 int, y1 int, y2 int) ([]Point,
 	}
 	velocity := initialVelocity
 
-    points = append(points, probe)
+	points = append(points, probe)
 
 	for {
 		probe.X += velocity.X
 		probe.Y += velocity.Y
 
-        points = append(points, probe)
+		points = append(points, probe)
 
 		// Drag adjustment
 		if velocity.X > 0 {
